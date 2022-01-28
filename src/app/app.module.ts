@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
-import { PageService, SortService, FilterService, EditService, ContextMenuService } from '@syncfusion/ej2-angular-treegrid';
+import { PageService, VirtualScrollService, SortService, RowDDService, FilterService, EditService, ContextMenuService } from '@syncfusion/ej2-angular-treegrid';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -11,13 +13,16 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    TreeGridModule
+    TreeGridModule,
+    HttpClientModule
   ],
   providers: [PageService,
     SortService,
     FilterService,
     ContextMenuService,
-    EditService],
+    EditService,
+    VirtualScrollService,
+    RowDDService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
